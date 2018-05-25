@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %} All Artist {%  endblock %}
+
+
+{% block content %}
+<h1>Edit the authort</h1>
+{% if author %}
+<form action="/aauthors/edit/{{author.id}}" method="post">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Artist Name</label>
+    <input type="email" class="form-control" name="name">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% else %}
+  <h2>authors table is empty</h2>
+  {% endif%}
+
+  {% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %} All Authors {%  endblock %}
+
+
+{% block content %}
+<h1>This page shows all authors in the database</h1>
+
+
+{% if authors %}
+  <h2> we have data</h2>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Authors Name</th>
+      <th scope="col">About</th>
+      <th scope="col">Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    </tr>
+    {% for author in authors %}
+    <tr>
+      <th scope="row">{{authors.id}}</th>
+      <td>{{authors.name}}</td>
+      <td>{{authors.about}}</td>
+      <td><a href="/authors/edit(aauthor.html)" role="button" class="btn btn-primary">Edit</button></td>
+      <td><button type="button" class="btn btn-danger">Delete</button></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+{% else %}
+  <h2>authors table is empty</h2>
+  {% endif%}
+</div>
+  {% endblock %}
